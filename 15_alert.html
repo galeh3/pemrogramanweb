@@ -1,0 +1,34 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <h1>Contoh Alert, Prompt, Confirm dan Form</h1>
+        <p> Silahkan klik tombol dibawah untuk melihat perbedaannya</p>
+        <button type="button" id="buttonAlert">Alert</button>
+        <button type="button" id="buttonPrompt">Prompt</button>
+        <button type="button" id="buttonConfirm">Confirm</button>
+        <button type="button" id="buttonForm">Form</button>
+        <form id="formTrapesium" onsubmit="javascript:void(0)">
+            <p> Silahkan input garis atas, garis bawah dan tinggi</p>
+            <span>Garis Atas : <input type="number" name="garisAtas"/></span><br>
+            <span>Garis Bawah : <input type="number" name="garisBawah"/></span><br>
+            <span>Tinggi : <input type="number" name="tinggi"/></span><br>
+            <button type="submit">Hitung</button>
+        </form>
+        <script type="text/javascript">
+            var form = document.getElementById("formTrapesium");
+            form.addEventListener("submit", function(e){
+                if(confirm("Apakah anda ingin menghitung luas trapesium?")){
+                    var jumlah = prompt("Silahkan masukkan banyaknya trapesium");
+                    var a = form.elements['garisAtas'].value;
+                    var b = form.elements['garisBawah'].value;
+                    var t = form.elements['tinggi'].value;
+                    var luas = 1/2*(a+b)*t;
+                    alert("Luas trapesium adalah " + luas + " dengan banyaknya " + jumlah + " trapesium");
+                }
+                e.preventDefault();
+                return false;
+            });
+        </script>
+    </body>
+</html>

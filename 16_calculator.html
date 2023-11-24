@@ -1,0 +1,31 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <h1>Kalkulator Sederhana</h1>
+        <span>Angka 1 : <input type="number" id="angka1"/></span><br>
+        <span>Angka 2 : <input type="number" id="angka2"/></span>
+        <select id="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="^">^</option>
+        </select><br>
+        <button type="button" id="buttonSubmit">Hitung</button><br>
+        <span>Hasil : <span id="hasil"></span></span>
+        <script type="text/javascript">
+            var button = document.getElementById("buttonSubmit");
+            button.addEventListener("click", function() {
+                var a = document.getElementById("angka1").value;
+                var b = document.getElementById("angka2").value;
+                var operator = document.getElementById("operator").value;
+                var hasil = parse(a+operator+b);
+                document.getElementById("hasil").innerHTML = hasil;
+            });
+            function parse(str) {
+                return Function(`'use strict'; return (${str})`)()
+            }
+        </script>
+    </body>
+</html>

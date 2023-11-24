@@ -1,0 +1,22 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <h1>Menghitung Luas Trapesium</h1>
+        <p> Silahkan input garis atas, garis bawah dan tinggi</p>
+        <span>Garis Atas : <input type="number" id="garisAtas"/></span><br>
+        <span>Garis Bawah : <input type="number" id="garisBawah"/></span><br>
+        <span>Tinggi : <input type="number" id="tinggi"/></span><br>
+        <button type="button" id="buttonSubmit">Hitung</button>
+        <script type="text/javascript">
+            var button = document.getElementById("buttonSubmit");
+            button.addEventListener("click", function() {
+            var a = Number(document.getElementById("garisAtas").value);
+            var b = Number(document.getElementById("garisBawah").value);
+            var t = Number(document.getElementById("tinggi").value);
+                var luas = 1/2*(a+b)*t;
+                window.alert("Luas trapesium adalah " + luas);
+            })
+        </script>
+    </body>
+</html>
