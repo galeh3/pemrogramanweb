@@ -1,0 +1,29 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <h1>Latihan fungsi</h1>
+        <iframe id="frame" width="600" height="400"></iframe><br>
+        <button onclick="openpage(1)">Kalkulator</button><br>
+        <button onclick="openpage(2)">Luas Trapesium</button><br>
+        <button onclick="openpage(3)">Deret Bilangan</button><br>
+        <script type="text/javascript">
+            function openpage(id){
+                var frame = document.getElementById("frame");
+                switch(id){
+                    case 1:
+                        frame.src = "16_calculator.html";
+                        break;
+
+                    case 2:
+                        frame.src = "14_luas_trapesium.html";
+                        break;
+
+                    case 3:
+                        frame.srcdoc = "<h3> 1,2,3,4,5,6</h1>";
+                        break;
+                }
+            }
+        </script>
+    </body>
+</html>
